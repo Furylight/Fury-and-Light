@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Returns, Exchanges &amp; Terms | Fury & Light</title>
+  <meta name="description" content="Official returns, size exchange policies, island-wide delivery terms, and print washing care instructions for Fury & Light t-shirts.">
+  
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    .policy-hero {
+      padding: 60px 0 40px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 10%, #101c30 0%, var(--bg-main) 70%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .policy-content-wrap {
+      max-width: 900px;
+      margin: 50px auto 90px;
+    }
+    .policy-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-bottom: 32px;
+      transition: var(--transition);
+    }
+    .policy-card:hover {
+      border-color: var(--border-ice);
+    }
+    .policy-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--ice-blue);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .policy-card p, .policy-card li {
+      color: var(--text-secondary);
+      font-size: 0.94rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .policy-card ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+    .policy-highlight-box {
+      background: rgba(0, 229, 255, 0.06);
+      border-left: 3px solid var(--ice-blue);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px;
+      margin: 18px 0;
+    }
+    .care-instruction-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .care-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .care-item-icon {
+      font-size: 1.4rem;
+      color: var(--ice-blue);
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .care-instruction-grid {
+        grid-template-columns: 1fr;
+      }
+      .policy-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span>⚡ FREE ISLAND-WIDE DELIVERY ON ORDERS OVER RS. 6,000 | 🐉 CUSTOM PRINTS OPEN</span>
+  </div>
+
+  <!-- Header Nav -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-link">
+        <div class="logo-img-wrap">
+          <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+        </div>
+        <div class="brand-text-block">
+          <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+          <div class="brand-subtitle">Streetwear Collective</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop All</a></li>
+          <li><a href="shop.html?cat=baggy" class="nav-link">Baggy Tees <span class="nav-badge-pill">HOT</span></a></li>
+          <li><a href="shop.html?cat=kids" class="nav-link">Kids Unisex</a></li>
+          <li><a href="custom.html" class="nav-link" style="color:var(--ice-blue);"><i class="fa fa-wand-magic-sparkles"></i> Custom Studio</a></li>
+          <li><a href="about.html" class="nav-link">Quality &amp; Story</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="custom.html" class="cta-btn-nav">
+          <i class="fa fa-palette"></i>
+          <span>Custom Tee</span>
+        </a>
+        <button class="icon-btn" onclick="openCartDrawer()" title="View Bag">
+          <i class="fa fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="policy-hero">
+    <div class="container">
+      <span class="section-tag">Transparency &amp; Trust</span>
+      <h1 class="section-title">RETURNS, TERMS &amp; CARE</h1>
+      <p class="section-subtitle">
+        Everything you need to know about our 7-day exchange guarantee, delivery timelines, and washing instructions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Policies Content -->
+  <main class="container">
+    <div class="policy-content-wrap">
+      
+      <!-- 7-Day Exchange Policy -->
+      <div id="returns" class="policy-card">
+        <h2><i class="fa fa-rotate-left"></i> 7-Day Hassle-Free Exchange Policy</h2>
+        <p>
+          At <strong>Fury &amp; Light</strong>, customer happiness is our priority. If you receive your t-shirt and find that the size isn't the perfect fit, you can exchange it within <strong>7 days of delivery</strong>.
+        </p>
+        
+        <div class="policy-highlight-box">
+          <strong style="color:var(--ice-blue);">Exchange Eligibility Requirements:</strong>
+          <ul style="margin-top:8px;margin-bottom:0;">
+            <li>Garment must be unworn, unwashed, and odor-free.</li>
+            <li>Original tags and packaging must remain intact.</li>
+            <li>Proof of purchase (order message on WhatsApp or invoice) must be provided.</li>
+          </ul>
+        </div>
+
+        <p>
+          <strong>Manufacturing Defect Guarantee:</strong> In the rare event of any sewing fault, fabric rip, or incorrect print color on delivery, we will replace your item immediately with <strong>free return shipping</strong>.
+        </p>
+        <p>
+          <strong>Custom Order Returns:</strong> Custom printed shirts (with customer-provided personal artwork, names or quotes) cannot be exchanged for size error once approved by you on WhatsApp. However, if there is any print defect or damaged fabric, we will happily reprint or refund.
+        </p>
+      </div>
+
+      <!-- Island-wide Delivery & Shipping -->
+      <div id="delivery" class="policy-card">
+        <h2><i class="fa fa-truck-fast"></i> Island-Wide Shipping &amp; Delivery</h2>
+        <p>
+          We ship to every city, district, and town across Sri Lanka using premier courier partners (PromptX, Domex, Certis Lanka, Pronto).
+        </p>
+        <ul>
+          <li><strong>Colombo &amp; Suburbs:</strong> Delivered within 1 to 2 business days.</li>
+          <li><strong>Outstation Districts:</strong> Delivered within 2 to 4 business days.</li>
+          <li><strong>Custom Print Orders:</strong> Require 24–48 hours for production before courier dispatch.</li>
+          <li><strong>Free Shipping:</strong> Automatically applied to all orders over <strong>Rs. 6,000</strong>.</li>
+        </ul>
+        <p>
+          A tracking number and SMS notification will be sent to your phone as soon as your package leaves our fulfillment center.
+        </p>
+      </div>
+
+      <!-- Washing & Print Care Guide -->
+      <div id="care" class="policy-card">
+        <h2><i class="fa fa-sparkles"></i> Washing &amp; Print Care Guide</h2>
+        <p>
+          Our high-density DTF and Japanese screen prints are engineered to withstand 60+ machine washes. Follow these simple steps to keep your colors vibrant for years:
+        </p>
+
+        <div class="care-instruction-grid">
+          <div class="care-item">
+            <i class="fa fa-shirt care-item-icon"></i>
+            <div>
+              <strong style="display:block;margin-bottom:4px;color:var(--text-primary);">Turn Inside Out</strong>
+              <span>Always invert the shirt before washing and ironing to protect the graphic print from friction.</span>
+            </div>
+          </div>
+
+          <div class="care-item">
+            <i class="fa fa-temperature-low care-item-icon"></i>
+            <div>
+              <strong style="display:block;margin-bottom:4px;color:var(--text-primary);">Cold Wash (Below 30°C)</strong>
+              <span>Use cold or lukewarm water with mild detergent. Avoid harsh bleaching agents or fabric softeners.</span>
+            </div>
+          </div>
+
+          <div class="care-item">
+            <i class="fa fa-wind care-item-icon"></i>
+            <div>
+              <strong style="display:block;margin-bottom:4px;color:var(--text-primary);">Air Dry in Shade</strong>
+              <span>Hang to dry in a shaded area. Avoid prolonged exposure to intense direct noon sunlight.</span>
+            </div>
+          </div>
+
+          <div class="care-item">
+            <i class="fa fa-fire-burner care-item-icon"></i>
+            <div>
+              <strong style="display:block;margin-bottom:4px;color:var(--text-primary);">Do NOT Iron on Print</strong>
+              <span>Never place a hot iron directly onto the printed graphic. Iron from the inside or cover with cotton cloth.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms of Service -->
+      <div class="policy-card">
+        <h2><i class="fa fa-scale-balanced"></i> Terms of Service &amp; Fair Pricing</h2>
+        <p>
+          1. <strong>Pricing &amp; Currency:</strong> All prices listed on this website are in Sri Lankan Rupees (Rs. / LKR) and represent the total retail cost before applicable delivery fees.
+        </p>
+        <p>
+          2. <strong>Payment Options:</strong> We accept Cash on Delivery (COD) for your convenience, as well as Direct Bank Deposit (Sampath Bank, Commercial Bank, HNB, FriMi).
+        </p>
+        <p>
+          3. <strong>Color Accuracy:</strong> We photograph and render our items with maximum fidelity. Minor color tone differences may occur depending on your phone or monitor display calibrations.
+        </p>
+        <p>
+          4. <strong>Customer Data Privacy:</strong> Your name, phone number, and delivery address are strictly used to fulfill your order and are never shared or sold to third-party advertisers.
+        </p>
+      </div>
+
+      <!-- Quick Action -->
+      <div style="text-align:center;margin-top:40px;">
+        <a href="shop.html" class="btn-primary" style="padding:14px 34px;">
+          <i class="fa fa-bag-shopping"></i> Continue Shopping
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo-link">
+            <div class="logo-img-wrap">
+              <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+            </div>
+            <div class="brand-text-block">
+              <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+              <div class="brand-subtitle">Streetwear Collective</div>
+            </div>
+          </div>
+          <p>Unisex premium streetwear tees engineered with 240 GSM combed cotton and vibrant crack-proof Japanese inks.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/94771234567" target="_blank" class="social-link-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="shop.html?cat=baggy">Baggy Oversized Tees</a></li>
+            <li><a href="shop.html?cat=regular">Regular Unisex Tees</a></li>
+            <li><a href="shop.html?cat=kids">Kids Unisex Collection</a></li>
+            <li><a href="custom.html">Custom Design Studio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Fury &amp; Light</a></li>
+            <li><a href="about.html#sizeGuide">Sizing Chart Guide</a></li>
+            <li><a href="terms.html">Returns &amp; Exchanges</a></li>
+            <li><a href="terms.html#delivery">Island-Wide Delivery</a></li>
+            <li><a href="terms.html#care">Print Washing &amp; Care</a></li>
+            <li><a href="contact.html">Help &amp; Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <div class="footer-contact-info">
+            <div class="contact-row-item">
+              <i class="fa fa-phone"></i>
+              <span id="footerPhoneDisplay">+94 77 123 4567</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-envelope"></i>
+              <span id="footerEmailDisplay">furyandlight.lk@gmail.com</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-location-dot"></i>
+              <span>Colombo / Island-wide Express Delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>FURY &amp; LIGHT</strong>. All Rights Reserved.</div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <a href="terms.html">Terms &amp; Privacy</a>
+          <span>•</span>
+          <button class="admin-trigger-link" onclick="openAdminModal()">
+            <i class="fa fa-gear"></i> Manage Store (Admin Mode)
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/94771234567" class="floating-whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Cart Drawer -->
+  <div id="cartOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3><i class="fa fa-bag-shopping" style="color:var(--ice-blue);"></i> Your Bag</h3>
+      <button class="cart-close-btn" onclick="closeCartDrawer()">&times;</button>
+    </div>
+    <div id="cartItemsContainer" class="cart-items-body"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="subtotal-label">Subtotal Estimate:</span>
+        <span id="cartSubtotal" class="subtotal-value">Rs. 0</span>
+      </div>
+      <button class="btn-checkout-whatsapp" onclick="checkoutViaWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Complete Order via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const config = getStoreConfig();
+      const p = document.getElementById("footerPhoneDisplay");
+      const e = document.getElementById("footerEmailDisplay");
+      if (p) p.textContent = config.phone;
+      if (e) e.textContent = config.email;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All T-Shirts | Fury & Light Streetwear Catalog</title>
+  <meta name="description" content="Browse our complete collection of Baggy Oversized, Regular Unisex, and Kids Edition T-Shirts. Premium 240 GSM cotton, custom colors and crack-proof prints.">
+  
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    /* Shop Page Specific Styles */
+    .shop-hero-header {
+      padding: 50px 0 30px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, #10192b 0%, var(--bg-main) 70%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .shop-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 36px;
+    }
+    .search-input-wrap {
+      position: relative;
+      min-width: 280px;
+      flex-grow: 1;
+      max-width: 400px;
+    }
+    .search-input-wrap i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    .shop-search-input {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 10px 16px 10px 40px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .shop-search-input:focus {
+      border-color: var(--ice-blue);
+      box-shadow: 0 0 12px var(--ice-glow-soft);
+    }
+    .sort-select-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .shop-sort-select {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      color: var(--text-primary);
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+    .shop-sort-select:focus {
+      border-color: var(--ice-blue);
+    }
+    .filter-chips-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .color-filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .color-filter-chip:hover, .color-filter-chip.active {
+      border-color: var(--ice-blue);
+      color: var(--ice-blue);
+      background: rgba(0, 229, 255, 0.08);
+    }
+    .results-count-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span>⚡ FREE ISLAND-WIDE DELIVERY ON ORDERS OVER RS. 6,000 | 🐉 CUSTOM PRINTS OPEN</span>
+  </div>
+
+  <!-- Header Nav -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-link">
+        <div class="logo-img-wrap">
+          <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+        </div>
+        <div class="brand-text-block">
+          <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+          <div class="brand-subtitle">Streetwear Collective</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link active">Shop All</a></li>
+          <li><a href="shop.html?cat=baggy" class="nav-link">Baggy Tees <span class="nav-badge-pill">HOT</span></a></li>
+          <li><a href="shop.html?cat=kids" class="nav-link">Kids Unisex</a></li>
+          <li><a href="custom.html" class="nav-link" style="color:var(--ice-blue);"><i class="fa fa-wand-magic-sparkles"></i> Custom Studio</a></li>
+          <li><a href="about.html" class="nav-link">Quality &amp; Story</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="custom.html" class="cta-btn-nav">
+          <i class="fa fa-palette"></i>
+          <span>Custom Tee</span>
+        </a>
+        <button class="icon-btn" onclick="openCartDrawer()" title="View Bag">
+          <i class="fa fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shop Hero Header -->
+  <section class="shop-hero-header">
+    <div class="container">
+      <span class="section-tag">Explore Collection</span>
+      <h1 class="section-title">THE STREETWEAR VAULT</h1>
+      <p class="section-subtitle">
+        Heavyweight oversized baggy fits, classic unisex essentials, and gentle kids tees. Choose your favorite drop or customize your own.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Catalog Section -->
+  <main class="container" style="padding-bottom: 80px;">
+    
+    <!-- Filter Tabs (Fit Category) -->
+    <div class="category-tabs" style="margin-top: 36px; margin-bottom: 24px;">
+      <button class="tab-btn active" data-cat="all" onclick="setShopCategory('all', this)">All T-Shirts</button>
+      <button class="tab-btn" data-cat="baggy" onclick="setShopCategory('baggy', this)">Baggy / Oversized</button>
+      <button class="tab-btn" data-cat="regular" onclick="setShopCategory('regular', this)">Regular Fit (Unisex)</button>
+      <button class="tab-btn" data-cat="kids" onclick="setShopCategory('kids', this)">Kids Edition</button>
+    </div>
+
+    <!-- Filter & Search Toolbar -->
+    <div class="shop-filter-bar">
+      <!-- Search Input -->
+      <div class="search-input-wrap">
+        <i class="fa fa-search"></i>
+        <input type="text" id="shopSearchInput" class="shop-search-input" placeholder="Search by name, fit, color, or fabric..." oninput="handleShopFilter()">
+      </div>
+
+      <!-- Color Filters -->
+      <div class="filter-chips-row" style="margin-bottom:0;">
+        <span style="font-size:0.82rem;color:var(--text-muted);font-weight:700;">COLOR:</span>
+        <div class="color-filter-chip active" data-color="all" onclick="setShopColor('all', this)">All</div>
+        <div class="color-filter-chip" data-color="black" onclick="setShopColor('black', this)">
+          <span style="width:10px;height:10px;background:#000;border-radius:50%;border:1px solid #444;"></span> Jet Black
+        </div>
+        <div class="color-filter-chip" data-color="white" onclick="setShopColor('white', this)">
+          <span style="width:10px;height:10px;background:#fff;border-radius:50%;"></span> White
+        </div>
+        <div class="color-filter-chip" data-color="ice" onclick="setShopColor('ice', this)">
+          <span style="width:10px;height:10px;background:#00e5ff;border-radius:50%;"></span> Ice Blue
+        </div>
+      </div>
+
+      <!-- Sort Dropdown -->
+      <div class="sort-select-wrap">
+        <label for="shopSortSelect" style="font-size:0.85rem;color:var(--text-muted);">Sort By:</label>
+        <select id="shopSortSelect" class="shop-sort-select" onchange="handleShopFilter()">
+          <option value="featured">Featured First</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="name">Product Name (A-Z)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Results Status -->
+    <div class="results-count-text">
+      Showing <strong id="shopResultsCount" style="color:var(--ice-blue);">0</strong> products
+    </div>
+
+    <!-- Product Grid -->
+    <div id="shopCatalogGrid" class="products-grid">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <!-- Custom Order Callout -->
+    <div style="background:var(--bg-surface);border:1px dashed var(--border-ice);border-radius:var(--radius-lg);padding:36px;text-align:center;margin-top:60px;">
+      <h3 style="font-family:var(--font-heading);font-size:1.4rem;margin-bottom:8px;">Can't find the exact print you're looking for?</h3>
+      <p style="color:var(--text-secondary);font-size:0.92rem;margin-bottom:20px;max-width:540px;margin-left:auto;margin-right:auto;">
+        We print ANY artwork, custom typography, band logo or illustration onto our premium baggy, regular or kids t-shirts.
+      </p>
+      <a href="custom.html" class="btn-primary" style="padding:12px 28px;">
+        <i class="fa fa-wand-magic-sparkles"></i> Open Custom T-Shirt Studio
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo-link">
+            <div class="logo-img-wrap">
+              <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+            </div>
+            <div class="brand-text-block">
+              <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+              <div class="brand-subtitle">Streetwear Collective</div>
+            </div>
+          </div>
+          <p>Unisex premium streetwear tees engineered with 240 GSM combed cotton and vibrant crack-proof Japanese inks.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/94771234567" target="_blank" class="social-link-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="shop.html?cat=baggy">Baggy Oversized Tees</a></li>
+            <li><a href="shop.html?cat=regular">Regular Unisex Tees</a></li>
+            <li><a href="shop.html?cat=kids">Kids Unisex Collection</a></li>
+            <li><a href="custom.html">Custom Design Studio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Fury &amp; Light</a></li>
+            <li><a href="about.html#sizeGuide">Sizing Chart Guide</a></li>
+            <li><a href="terms.html">Returns &amp; Exchanges</a></li>
+            <li><a href="terms.html#delivery">Island-Wide Delivery</a></li>
+            <li><a href="terms.html#care">Print Washing &amp; Care</a></li>
+            <li><a href="contact.html">Help &amp; Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <div class="footer-contact-info">
+            <div class="contact-row-item">
+              <i class="fa fa-phone"></i>
+              <span id="footerPhoneDisplay">+94 77 123 4567</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-envelope"></i>
+              <span id="footerEmailDisplay">furyandlight.lk@gmail.com</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-location-dot"></i>
+              <span>Colombo / Island-wide Express Delivery</span>
+            </div>
+            <div style="margin-top:10px;">
+              <a href="https://wa.me/94771234567" target="_blank" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;background:#25d366;color:#000;">
+                <i class="fab fa-whatsapp"></i> WhatsApp Order Line
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>FURY &amp; LIGHT</strong>. All Rights Reserved.</div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <a href="terms.html">Terms &amp; Privacy</a>
+          <span>•</span>
+          <button class="admin-trigger-link" onclick="openAdminModal()">
+            <i class="fa fa-gear"></i> Manage Store (Admin Mode)
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/94771234567" class="floating-whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Cart Drawer -->
+  <div id="cartOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3><i class="fa fa-bag-shopping" style="color:var(--ice-blue);"></i> Your Bag</h3>
+      <button class="cart-close-btn" onclick="closeCartDrawer()">&times;</button>
+    </div>
+    <div id="cartItemsContainer" class="cart-items-body"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="subtotal-label">Subtotal Estimate:</span>
+        <span id="cartSubtotal" class="subtotal-value">Rs. 0</span>
+      </div>
+      <button class="btn-checkout-whatsapp" onclick="checkoutViaWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Complete Order via WhatsApp
+      </button>
+      <p style="text-align:center;font-size:0.75rem;color:var(--text-muted);margin-top:10px;">
+        Instant confirmation • Island-wide Cash on Delivery / Bank Transfer
+      </p>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div id="quickViewModal" class="modal-overlay">
+    <div class="modal-content-card">
+      <button class="modal-close-btn" onclick="closeQuickView()">&times;</button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin.js"></script>
+
+  <script>
+    let activeCategory = 'all';
+    let activeColor = 'all';
+
+    function initShopPage() {
+      // Check URL params e.g. ?cat=baggy
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('cat');
+      if (catParam) {
+        activeCategory = catParam;
+        const targetTab = document.querySelector(`.tab-btn[data-cat="${catParam}"]`);
+        if (targetTab) {
+          document.querySelectorAll('.category-tabs .tab-btn').forEach(t => t.classList.remove('active'));
+          targetTab.classList.add('active');
+        }
+      }
+
+      handleShopFilter();
+
+      const config = getStoreConfig();
+      const p = document.getElementById("footerPhoneDisplay");
+      const e = document.getElementById("footerEmailDisplay");
+      if (p) p.textContent = config.phone;
+      if (e) e.textContent = config.email;
+    }
+
+    function setShopCategory(cat, btn) {
+      activeCategory = cat;
+      document.querySelectorAll('.category-tabs .tab-btn').forEach(t => t.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      handleShopFilter();
+    }
+
+    function setShopColor(col, btn) {
+      activeColor = col;
+      document.querySelectorAll('.color-filter-chip').forEach(c => c.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      handleShopFilter();
+    }
+
+    function handleShopFilter() {
+      const products = getProducts();
+      const config = getStoreConfig();
+      const query = (document.getElementById('shopSearchInput')?.value || '').toLowerCase().trim();
+      const sort = document.getElementById('shopSortSelect')?.value || 'featured';
+
+      let filtered = products.filter(p => {
+        // Category filter
+        if (activeCategory !== 'all' && p.category !== activeCategory) return false;
+
+        // Color filter
+        if (activeColor !== 'all') {
+          const hasCol = (p.colors || []).some(c => c.code === activeColor || c.name.toLowerCase().includes(activeColor));
+          if (!hasCol) return false;
+        }
+
+        // Search Query
+        if (query) {
+          const matchName = p.name.toLowerCase().includes(query);
+          const matchFit = (p.fit || '').toLowerCase().includes(query);
+          const matchDesc = (p.description || '').toLowerCase().includes(query);
+          const matchCat = (p.category || '').toLowerCase().includes(query);
+          if (!matchName && !matchFit && !matchDesc && !matchCat) return false;
+        }
+
+        return true;
+      });
+
+      // Sorting
+      if (sort === 'price-low') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sort === 'price-high') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sort === 'name') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      // Update count
+      const countEl = document.getElementById('shopResultsCount');
+      if (countEl) countEl.textContent = filtered.length;
+
+      // Render cards
+      const grid = document.getElementById('shopCatalogGrid');
+      if (!grid) return;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <div style="font-size: 3rem; color: var(--ice-blue); margin-bottom: 12px; opacity: 0.6;">🔍</div>
+            <h3>No T-Shirts Match Your Filter</h3>
+            <p style="color: var(--text-secondary); margin-top: 8px; font-size: 0.9rem;">Try searching for another style or resetting color filter.</p>
+            <button class="btn-primary" style="margin-top: 18px; padding: 10px 22px; font-size: 0.85rem;" onclick="resetShopFilters()">Reset All Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="product-card" data-category="${p.category}">
+          <div class="product-thumb-wrap">
+            <span class="product-badge-float">${p.badge || 'PREMIUM'}</span>
+            <img src="${p.image}" alt="${p.name}" loading="lazy">
+            <button class="product-quick-view-btn" onclick="openQuickView('${p.id}')">
+              <i class="fa fa-eye"></i> Quick View
+            </button>
+          </div>
+
+          <div class="product-body">
+            <div class="product-category-row">
+              <span class="product-fit-label">${p.fit || p.category}</span>
+              <span class="product-fabric-tag">${p.fabric ? p.fabric.split('•')[0] : ''}</span>
+            </div>
+
+            <h3 class="product-title">${p.name}</h3>
+
+            <div class="product-colors-row">
+              ${(p.colors || []).map((c, idx) => `
+                <div class="color-dot ${idx === 0 ? 'active' : ''}" style="background-color: ${c.hex};" title="${c.name}"></div>
+              `).join("")}
+            </div>
+
+            <div class="product-price-row">
+              <div class="product-current-price">${config.currency} ${p.price.toLocaleString()}</div>
+              ${p.originalPrice ? `<div class="product-orig-price">${config.currency} ${p.originalPrice.toLocaleString()}</div>` : ''}
+            </div>
+
+            <div class="product-actions-row">
+              <button class="btn-add-cart" onclick="addToCart('${p.id}')">
+                <i class="fa fa-bag-shopping"></i> Add To Bag
+              </button>
+              <button class="btn-whatsapp-direct" onclick="directWhatsAppOrder('${p.id}')" title="Instant Order via WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function resetShopFilters() {
+      activeCategory = 'all';
+      activeColor = 'all';
+      const searchInput = document.getElementById('shopSearchInput');
+      if (searchInput) searchInput.value = '';
+      document.querySelectorAll('.category-tabs .tab-btn').forEach(t => t.classList.remove('active'));
+      document.querySelector('.category-tabs .tab-btn[data-cat="all"]')?.classList.add('active');
+      document.querySelectorAll('.color-filter-chip').forEach(c => c.classList.remove('active'));
+      document.querySelector('.color-filter-chip[data-color="all"]')?.classList.add('active');
+      handleShopFilter();
+    }
+
+    document.addEventListener('DOMContentLoaded', initShopPage);
+  </script>
+</body>
+</html>

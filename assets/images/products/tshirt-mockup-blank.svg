@@ -1,0 +1,26 @@
+<svg id="customTshirtSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" width="100%" height="100%">
+  <defs>
+    <radialGradient id="customGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="customShade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="24" fill="#090d14"/>
+  <circle cx="250" cy="275" r="215" fill="url(#customGlow)"/>
+  
+  <!-- T-Shirt Body (Dynamic fill) -->
+  <g class="custom-shirt-group">
+    <path id="customShirtPath" d="M 165 85 Q 250 120 335 85 L 455 165 L 415 245 L 365 215 L 370 470 Q 250 480 130 470 L 135 215 L 85 245 L 45 165 Z" fill="#12141a" stroke="#2a3344" stroke-width="2.5"/>
+    <path d="M 165 85 Q 250 120 335 85 L 455 165 L 415 245 L 365 215 L 370 470 Q 250 480 130 470 L 135 215 L 85 245 L 45 165 Z" fill="url(#customShade)"/>
+    <path id="customCollarPath" d="M 170 85 Q 250 122 330 85 Q 250 100 170 85 Z" fill="#0c0e14" stroke="#2a3344" stroke-width="1.8"/>
+  </g>
+
+  <!-- Printable Area Guideline (Subtle) -->
+  <rect id="printGuide" x="175" y="150" width="150" height="200" rx="8" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.35"/>
+  <text id="printGuideLabel" x="250" y="142" font-family="sans-serif" font-size="9" fill="#00e5ff" text-anchor="middle" letter-spacing="1.5" opacity="0.6">PRINT AREA (CENTER CHEST)</text>
+</svg>

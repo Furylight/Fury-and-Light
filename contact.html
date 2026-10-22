@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Connect | Fury & Light</title>
+  <meta name="description" content="Reach out to Fury & Light. Chat with us on WhatsApp, call, email, or connect via Instagram, TikTok, and Facebook. Fast island-wide customer support.">
+  
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    .contact-hero {
+      padding: 60px 0 40px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 10%, #101c30 0%, var(--bg-main) 70%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .contact-channels-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 50px 0;
+    }
+    .channel-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 26px 20px;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .channel-card:hover {
+      border-color: var(--ice-blue);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px var(--ice-glow-soft);
+    }
+    .channel-icon-circle {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .channel-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .channel-detail {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      word-break: break-all;
+    }
+    .channel-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+    .channel-card:hover .channel-action-link {
+      background: var(--ice-blue);
+      color: #000;
+      border-color: var(--ice-blue);
+    }
+
+    .social-banner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    .social-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: var(--transition);
+    }
+    .social-card:hover {
+      border-color: var(--ice-blue);
+      transform: translateY(-4px);
+    }
+    .social-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      padding-bottom: 80px;
+    }
+    .contact-form-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 28px;
+      padding: 36px;
+    }
+    .faq-side-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 28px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .faq-item h4 {
+      font-size: 0.98rem;
+      color: var(--ice-blue);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .faq-item p {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .contact-channels-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .social-banner-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-form-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 500px) {
+      .contact-channels-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span>⚡ FREE ISLAND-WIDE DELIVERY ON ORDERS OVER RS. 6,000 | 🐉 CUSTOM PRINTS OPEN</span>
+  </div>
+
+  <!-- Header Nav -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-link">
+        <div class="logo-img-wrap">
+          <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+        </div>
+        <div class="brand-text-block">
+          <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+          <div class="brand-subtitle">Streetwear Collective</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop All</a></li>
+          <li><a href="shop.html?cat=baggy" class="nav-link">Baggy Tees <span class="nav-badge-pill">HOT</span></a></li>
+          <li><a href="shop.html?cat=kids" class="nav-link">Kids Unisex</a></li>
+          <li><a href="custom.html" class="nav-link" style="color:var(--ice-blue);"><i class="fa fa-wand-magic-sparkles"></i> Custom Studio</a></li>
+          <li><a href="about.html" class="nav-link">Quality &amp; Story</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="custom.html" class="cta-btn-nav">
+          <i class="fa fa-palette"></i>
+          <span>Custom Tee</span>
+        </a>
+        <button class="icon-btn" onclick="openCartDrawer()" title="View Bag">
+          <i class="fa fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Hero Header -->
+  <section class="contact-hero">
+    <div class="container">
+      <span class="section-tag">Direct Lines</span>
+      <h1 class="section-title">WE ARE HERE FOR YOU</h1>
+      <p class="section-subtitle">
+        Have questions about t-shirt sizes, bulk printing orders, or custom designs? Connect directly with our team.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- 4 Direct Channels -->
+    <div class="contact-channels-grid">
+      
+      <!-- WhatsApp Direct -->
+      <div class="channel-card">
+        <div class="channel-icon-circle" style="background:rgba(37,211,102,0.15);color:#25d366;border:1px solid rgba(37,211,102,0.3);">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <h3 class="channel-title">WhatsApp Order Line</h3>
+        <p class="channel-detail" id="channelWaNumber">+94 77 123 4567</p>
+        <a id="channelWaLink" href="https://wa.me/94771234567" target="_blank" class="channel-action-link">
+          Chat Directly <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Phone Direct -->
+      <div class="channel-card">
+        <div class="channel-icon-circle" style="background:rgba(0,229,255,0.12);color:var(--ice-blue);border:1px solid var(--border-ice);">
+          <i class="fa fa-phone"></i>
+        </div>
+        <h3 class="channel-title">Phone Call</h3>
+        <p class="channel-detail" id="channelPhoneNumber">+94 77 123 4567</p>
+        <a id="channelPhoneLink" href="tel:+94771234567" class="channel-action-link">
+          Call Now <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Email Direct -->
+      <div class="channel-card">
+        <div class="channel-icon-circle" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);">
+          <i class="fa fa-envelope"></i>
+        </div>
+        <h3 class="channel-title">Email Us</h3>
+        <p class="channel-detail" id="channelEmailAddress">furyandlight.lk@gmail.com</p>
+        <a id="channelEmailLink" href="mailto:furyandlight.lk@gmail.com" class="channel-action-link">
+          Send Email <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Island-wide Delivery Area -->
+      <div class="channel-card">
+        <div class="channel-icon-circle" style="background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);">
+          <i class="fa fa-truck-fast"></i>
+        </div>
+        <h3 class="channel-title">Island-Wide Delivery</h3>
+        <p class="channel-detail">Colombo &amp; All Districts in Sri Lanka</p>
+        <a href="terms.html#delivery" class="channel-action-link">
+          Delivery Info <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Social Media Grid -->
+    <div style="margin-bottom: 20px;">
+      <span class="section-tag">Follow The Movement</span>
+      <h2 class="section-title" style="text-align:left;font-size:1.8rem;margin-bottom:20px;">CONNECT ON SOCIAL MEDIA</h2>
+    </div>
+
+    <div class="social-banner-grid">
+      <!-- Instagram -->
+      <a id="contactInstaCard" href="https://instagram.com/furyandlight" target="_blank" class="social-card">
+        <div class="social-card-icon" style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);color:#fff;">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div>
+          <div style="font-family:var(--font-heading);font-weight:800;font-size:1.05rem;">Instagram</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">@furyandlight • Streetwear Drops &amp; Photos</div>
+        </div>
+      </a>
+
+      <!-- TikTok -->
+      <a id="contactTiktokCard" href="https://tiktok.com/@furyandlight" target="_blank" class="social-card">
+        <div class="social-card-icon" style="background:#000000;border:1px solid #333;color:#00f2fe;">
+          <i class="fab fa-tiktok"></i>
+        </div>
+        <div>
+          <div style="font-family:var(--font-heading);font-weight:800;font-size:1.05rem;">TikTok</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">@furyandlight • Printing Videos &amp; OOTD</div>
+        </div>
+      </a>
+
+      <!-- Facebook -->
+      <a id="contactFbCard" href="https://facebook.com/furyandlight" target="_blank" class="social-card">
+        <div class="social-card-icon" style="background:#1877f2;color:#fff;">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <div>
+          <div style="font-family:var(--font-heading);font-weight:800;font-size:1.05rem;">Facebook</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">Fury and Light • Reviews &amp; Announcements</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Contact Form & FAQ -->
+    <div class="contact-form-layout">
+      
+      <!-- Interactive Form -->
+      <div class="contact-form-box">
+        <h3 style="font-family:var(--font-heading);font-size:1.45rem;font-weight:800;margin-bottom:6px;">Send Us a Message</h3>
+        <p style="font-size:0.88rem;color:var(--text-secondary);margin-bottom:24px;">Fill out this form and we'll reply directly to your phone / WhatsApp or email.</p>
+
+        <form id="contactMessageForm" onsubmit="handleContactSubmit(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="admin-form-group">
+              <label>Your Name *</label>
+              <input type="text" id="contactName" class="admin-input" required placeholder="Kamal Perera">
+            </div>
+            <div class="admin-form-group">
+              <label>WhatsApp / Phone Number *</label>
+              <input type="tel" id="contactPhone" class="admin-input" required placeholder="077 123 4567">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="admin-form-group">
+              <label>Email Address</label>
+              <input type="email" id="contactEmail" class="admin-input" placeholder="kamal@gmail.com">
+            </div>
+            <div class="admin-form-group">
+              <label>Topic / Inquiry Type</label>
+              <select id="contactTopic" class="admin-select">
+                <option value="Custom T-Shirt Order">Custom T-Shirt Order</option>
+                <option value="Size & Fit Advice">Size &amp; Fit Advice</option>
+                <option value="Delivery & Order Tracking">Delivery &amp; Order Tracking</option>
+                <option value="Bulk Order (5+ shirts)">Bulk Order (5+ shirts)</option>
+                <option value="Other Question">Other Question</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="admin-form-group">
+            <label>Your Message / Ideas *</label>
+            <textarea id="contactMsg" class="admin-textarea" rows="4" required placeholder="Describe what you need, your custom design idea, or inquiry..."></textarea>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+            <button type="submit" class="btn-primary" style="flex-grow:1;">
+              <i class="fab fa-whatsapp"></i> Send Direct to WhatsApp
+            </button>
+            <button type="button" class="btn-secondary" onclick="handleEmailSendFallback()">
+              <i class="fa fa-envelope"></i> Send via Email
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Quick FAQ Side Box -->
+      <div class="faq-side-box">
+        <h3 style="font-family:var(--font-heading);font-size:1.3rem;font-weight:800;border-bottom:1px solid var(--border-subtle);padding-bottom:12px;">Frequently Asked</h3>
+
+        <div class="faq-item">
+          <h4><i class="fa fa-clock"></i> How fast is delivery in Sri Lanka?</h4>
+          <p>Within Colombo: 1–2 business days. Outstation &amp; island-wide: 2–4 business days via registered courier.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa fa-money-bill-wave"></i> What payment methods do you accept?</h4>
+          <p>We accept Cash on Delivery (COD) island-wide and direct Bank Transfer (Sampath, Commercial, HNB, FriMi).</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa fa-shirt"></i> Can I return or exchange if the size is wrong?</h4>
+          <p>Yes! We offer a smooth 7-day exchange guarantee. Simply contact us on WhatsApp with your unworn garment.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4><i class="fa fa-wand-magic-sparkles"></i> Is there a minimum quantity for custom prints?</h4>
+          <p>No minimums! You can order just 1 single custom printed t-shirt or 100+ pieces for events and clubs.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo-link">
+            <div class="logo-img-wrap">
+              <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+            </div>
+            <div class="brand-text-block">
+              <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+              <div class="brand-subtitle">Streetwear Collective</div>
+            </div>
+          </div>
+          <p>Unisex premium streetwear tees engineered with 240 GSM combed cotton and vibrant crack-proof Japanese inks.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/94771234567" target="_blank" class="social-link-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="shop.html?cat=baggy">Baggy Oversized Tees</a></li>
+            <li><a href="shop.html?cat=regular">Regular Unisex Tees</a></li>
+            <li><a href="shop.html?cat=kids">Kids Unisex Collection</a></li>
+            <li><a href="custom.html">Custom Design Studio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Fury &amp; Light</a></li>
+            <li><a href="about.html#sizeGuide">Sizing Chart Guide</a></li>
+            <li><a href="terms.html">Returns &amp; Exchanges</a></li>
+            <li><a href="terms.html#delivery">Island-Wide Delivery</a></li>
+            <li><a href="terms.html#care">Print Washing &amp; Care</a></li>
+            <li><a href="contact.html">Help &amp; Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <div class="footer-contact-info">
+            <div class="contact-row-item">
+              <i class="fa fa-phone"></i>
+              <span id="footerPhoneDisplay">+94 77 123 4567</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-envelope"></i>
+              <span id="footerEmailDisplay">furyandlight.lk@gmail.com</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-location-dot"></i>
+              <span>Colombo / Island-wide Express Delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>FURY &amp; LIGHT</strong>. All Rights Reserved.</div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <a href="terms.html">Terms &amp; Privacy</a>
+          <span>•</span>
+          <button class="admin-trigger-link" onclick="openAdminModal()">
+            <i class="fa fa-gear"></i> Manage Store (Admin Mode)
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/94771234567" class="floating-whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Cart Drawer -->
+  <div id="cartOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3><i class="fa fa-bag-shopping" style="color:var(--ice-blue);"></i> Your Bag</h3>
+      <button class="cart-close-btn" onclick="closeCartDrawer()">&times;</button>
+    </div>
+    <div id="cartItemsContainer" class="cart-items-body"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="subtotal-label">Subtotal Estimate:</span>
+        <span id="cartSubtotal" class="subtotal-value">Rs. 0</span>
+      </div>
+      <button class="btn-checkout-whatsapp" onclick="checkoutViaWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Complete Order via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin.js"></script>
+
+  <script>
+    function initContactPage() {
+      const config = getStoreConfig();
+      
+      // Update channels
+      const waNum = document.getElementById("channelWaNumber");
+      const waLink = document.getElementById("channelWaLink");
+      if (waNum) waNum.textContent = `+${config.whatsapp}`;
+      if (waLink) waLink.href = `https://wa.me/${config.whatsapp}?text=Hi%20Fury%20%26%20Light!%20I%20have%20an%20inquiry.`;
+
+      const phoneNum = document.getElementById("channelPhoneNumber");
+      const phoneLink = document.getElementById("channelPhoneLink");
+      if (phoneNum) phoneNum.textContent = config.phone;
+      if (phoneLink) phoneLink.href = `tel:${config.phone.replace(/[^0-9+]/g, '')}`;
+
+      const emailEl = document.getElementById("channelEmailAddress");
+      const emailLink = document.getElementById("channelEmailLink");
+      if (emailEl) emailEl.textContent = config.email;
+      if (emailLink) emailLink.href = `mailto:${config.email}`;
+
+      // Socials
+      if (config.socials?.instagram) document.getElementById("contactInstaCard").href = config.socials.instagram;
+      if (config.socials?.tiktok) document.getElementById("contactTiktokCard").href = config.socials.tiktok;
+      if (config.socials?.facebook) document.getElementById("contactFbCard").href = config.socials.facebook;
+
+      const p = document.getElementById("footerPhoneDisplay");
+      const e = document.getElementById("footerEmailDisplay");
+      if (p) p.textContent = config.phone;
+      if (e) e.textContent = config.email;
+    }
+
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const config = getStoreConfig();
+
+      const name = document.getElementById("contactName").value.trim();
+      const phone = document.getElementById("contactPhone").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const topic = document.getElementById("contactTopic").value;
+      const msg = document.getElementById("contactMsg").value.trim();
+
+      let text = `💬 *CUSTOMER MESSAGE - FURY & LIGHT*\n`;
+      text += `--------------------------------------\n`;
+      text += `• *Name:* ${name}\n`;
+      text += `• *Phone / WhatsApp:* ${phone}\n`;
+      if (email) text += `• *Email:* ${email}\n`;
+      text += `• *Topic:* ${topic}\n`;
+      text += `• *Message:*\n"${msg}"\n`;
+      text += `--------------------------------------`;
+
+      const waUrl = `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, "_blank");
+    }
+
+    function handleEmailSendFallback() {
+      const config = getStoreConfig();
+      const name = document.getElementById("contactName").value.trim() || "Customer";
+      const topic = document.getElementById("contactTopic").value;
+      const msg = document.getElementById("contactMsg").value.trim();
+
+      const subject = encodeURIComponent(`[Inquiry] ${topic} - ${name}`);
+      const body = encodeURIComponent(msg);
+      window.location.href = `mailto:${config.email}?subject=${subject}&body=${body}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", initContactPage);
+  </script>
+</body>
+</html>

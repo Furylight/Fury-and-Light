@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" rx="24" fill="#090d14"/>
+  <circle cx="250" cy="275" r="215" fill="url(#glow)"/>
+  
+  <!-- Regular T-Shirt Body (Charcoal) -->
+  <g class="tshirt-wrap">
+    <path d="M 170 85 Q 250 115 330 85 L 440 150 L 405 220 L 360 195 L 360 465 Q 250 475 140 465 L 140 195 L 95 220 L 60 150 Z" fill="#2d333f" stroke="#3e4654" stroke-width="2"/>
+    <path d="M 170 85 Q 250 115 330 85 L 440 150 L 405 220 L 360 195 L 360 465 Q 250 475 140 465 L 140 195 L 95 220 L 60 150 Z" fill="url(#shade)"/>
+    <path d="M 170 85 Q 250 120 330 85 Q 250 98 170 85 Z" fill="#222731" stroke="#3e4654" stroke-width="1.8"/>
+  </g>
+
+  <!-- Graphic Print -->
+  <g transform="translate(165, 150) scale(0.35)">
+    <path d="M 120 70 C 60 10 0 65 25 125 C 45 185 120 235 120 235 C 120 235 195 185 215 125 C 240 65 180 10 120 70 Z" 
+          fill="none" stroke="#00e5ff" stroke-width="8" filter="url(#neon)"/>
+    <circle cx="90" cy="100" r="7" fill="#00e5ff" filter="url(#neon)"/>
+    <circle cx="150" cy="100" r="7" fill="#ffffff" filter="url(#neon)"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="250" y="275" font-family="'Impact', 'Arial Black', sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="4" text-anchor="middle">SHADOW DRAGON</text>
+  <text x="250" y="298" font-family="'Courier New', monospace" font-size="10" font-weight="700" fill="#00e5ff" letter-spacing="2.5" text-anchor="middle">CLASSIC CREW NECK</text>
+  <rect x="200" y="310" width="100" height="2" fill="#00e5ff" opacity="0.8"/>
+
+  <!-- Badge Tag -->
+  <rect x="25" y="25" width="135" height="28" rx="14" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="1.2"/>
+  <text x="92" y="43" font-family="sans-serif" font-size="11" font-weight="700" fill="#00e5ff" text-anchor="middle">✨ REGULAR FIT</text>
+</svg>

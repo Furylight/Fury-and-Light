@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom T-Shirt Studio | Fury & Light</title>
+  <meta name="description" content="Design and order custom printed t-shirts in Sri Lanka. Choose Baggy Oversized or Regular Unisex fits, upload your own artwork or text, and order directly via WhatsApp.">
+  
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    /* Custom Studio Specific Styles */
+    .studio-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 40px;
+      padding: 40px 0 80px;
+      align-items: flex-start;
+    }
+
+    .studio-preview-col {
+      position: sticky;
+      top: 100px;
+    }
+
+    .studio-preview-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-ice);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px var(--ice-glow-soft);
+      position: relative;
+    }
+
+    .mockup-canvas-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #090e18;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mockup-canvas-wrapper svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    #livePrintOverlay {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .studio-controls-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 28px;
+      padding: 36px;
+    }
+
+    .studio-step-block {
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(0, 229, 255, 0.15);
+      border: 1px solid var(--ice-blue);
+      color: var(--ice-blue);
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .fit-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .fit-option-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .fit-option-card:hover {
+      border-color: var(--border-ice);
+      background: var(--bg-elevated);
+    }
+
+    .fit-option-card.active {
+      border-color: var(--ice-blue);
+      background: rgba(0, 229, 255, 0.08);
+      box-shadow: 0 0 16px var(--ice-glow-soft);
+    }
+
+    .fit-card-name {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .fit-card-gsm {
+      font-size: 0.75rem;
+      color: var(--ice-blue);
+      font-weight: 600;
+    }
+
+    .fit-card-price {
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-top: 8px;
+      color: var(--text-primary);
+    }
+
+    .custom-color-swatches-grid {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .custom-color-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--border-subtle);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .custom-color-swatch:hover, .custom-color-swatch.active {
+      transform: scale(1.15);
+      border-color: var(--ice-blue);
+      box-shadow: 0 0 14px var(--ice-blue);
+    }
+
+    .placements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .placement-btn {
+      padding: 12px 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .placement-btn:hover, .placement-btn.active {
+      background: var(--ice-blue);
+      color: #000;
+      border-color: var(--ice-blue);
+      box-shadow: 0 4px 14px var(--ice-glow);
+    }
+
+    .artwork-uploader-box {
+      border: 2px dashed var(--border-ice);
+      background: rgba(0, 229, 255, 0.03);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .artwork-uploader-box:hover {
+      border-color: var(--ice-blue);
+      background: rgba(0, 229, 255, 0.08);
+    }
+
+    .file-input-hidden {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .uploaded-thumb-preview {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--ice-blue);
+      background: #000;
+      margin: 10px auto 0;
+      display: none;
+    }
+
+    .text-colors-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .text-color-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .text-color-dot.active {
+      border-color: #fff;
+      transform: scale(1.2);
+    }
+
+    .custom-price-summary-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-ice);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .studio-cta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .studio-layout-grid {
+        grid-template-columns: 1fr;
+      }
+      .studio-preview-col {
+        position: static;
+      }
+      .fit-options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span>⚡ FREE ISLAND-WIDE DELIVERY ON ORDERS OVER RS. 6,000 | 🐉 CUSTOM PRINTS OPEN</span>
+  </div>
+
+  <!-- Header Nav -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-link">
+        <div class="logo-img-wrap">
+          <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+        </div>
+        <div class="brand-text-block">
+          <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+          <div class="brand-subtitle">Streetwear Collective</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop All</a></li>
+          <li><a href="shop.html?cat=baggy" class="nav-link">Baggy Tees <span class="nav-badge-pill">HOT</span></a></li>
+          <li><a href="shop.html?cat=kids" class="nav-link">Kids Unisex</a></li>
+          <li><a href="custom.html" class="nav-link active" style="color:var(--ice-blue);"><i class="fa fa-wand-magic-sparkles"></i> Custom Studio</a></li>
+          <li><a href="about.html" class="nav-link">Quality &amp; Story</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="openCartDrawer()" title="View Bag">
+          <i class="fa fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Studio Header -->
+  <section class="shop-hero-header">
+    <div class="container">
+      <span class="section-tag">Interactive Customizer</span>
+      <h1 class="section-title">CUSTOM T-SHIRT STUDIO</h1>
+      <p class="section-subtitle">
+        Your imagination, our premium cotton canvas. Pick your silhouette, upload your artwork or custom text, and watch it render live on screen!
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Customizer Studio -->
+  <div class="container">
+    <div class="studio-layout-grid">
+      
+      <!-- Left Column: Interactive Live T-Shirt Preview -->
+      <div class="studio-preview-col">
+        <div class="studio-preview-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+            <span style="font-size:0.8rem;color:var(--ice-blue);font-weight:700;letter-spacing:1px;text-transform:uppercase;">
+              <i class="fa fa-eye"></i> LIVE PREVIEW
+            </span>
+            <span id="selectedCustomColorLabel" style="font-size:0.8rem;color:var(--text-muted);font-weight:600;">
+              Jet Black
+            </span>
+          </div>
+
+          <!-- Mockup Canvas Frame -->
+          <div class="mockup-canvas-wrapper">
+            <!-- Inline SVG Base Mockup -->
+            <svg id="customTshirtSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" width="100%" height="100%">
+              <defs>
+                <radialGradient id="customGlow" cx="50%" cy="50%" r="65%">
+                  <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="customShade" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+                  <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+                  <stop offset="100%" stop-color="#000000" stop-opacity="0.25"/>
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" rx="24" fill="#090d14"/>
+              <circle cx="250" cy="275" r="215" fill="url(#customGlow)"/>
+              
+              <!-- T-Shirt Body -->
+              <g class="custom-shirt-group">
+                <path id="customShirtPath" d="M 165 85 Q 250 120 335 85 L 455 165 L 415 245 L 365 215 L 370 470 Q 250 480 130 470 L 135 215 L 85 245 L 45 165 Z" fill="#0a0d14" stroke="#2a3344" stroke-width="2.5"/>
+                <path d="M 165 85 Q 250 120 335 85 L 455 165 L 415 245 L 365 215 L 370 470 Q 250 480 130 470 L 135 215 L 85 245 L 45 165 Z" fill="url(#customShade)"/>
+                <path id="customCollarPath" d="M 170 85 Q 250 122 330 85 Q 250 100 170 85 Z" fill="#08090d" stroke="#2a3344" stroke-width="1.8"/>
+              </g>
+
+              <!-- Print Area Guideline -->
+              <rect id="printGuide" x="175" y="150" width="150" height="200" rx="8" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.4"/>
+              <text id="printGuideLabel" x="250" y="142" font-family="sans-serif" font-size="9" fill="#00e5ff" text-anchor="middle" letter-spacing="1.5" opacity="0.7">PRINT AREA (CENTER CHEST)</text>
+            </svg>
+
+            <!-- Dynamic Live Print Overlay -->
+            <div id="livePrintOverlay">
+              <div style="text-align:center; color: var(--ice-blue); opacity: 0.8; font-size: 0.8rem; font-weight: 600; padding: 10px;">
+                <i class="fa fa-sparkles" style="font-size:1.4rem; display:block; margin-bottom:4px;"></i>
+                Your Artwork / Text Here
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;color:var(--text-muted);">
+            <span>Drag or upload high-res PNG/JPG for best prints</span>
+            <span>Unisex Sizing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Step-by-Step Customizer Options -->
+      <div class="studio-controls-col">
+        <div class="studio-controls-card">
+          
+          <!-- STEP 1: SILHOUETTE & GSM -->
+          <div class="studio-step-block">
+            <div class="step-header">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Choose T-Shirt Silhouette</h3>
+            </div>
+            
+            <div class="fit-options-grid">
+              <div class="fit-option-card active" onclick="setCustomFit('baggy', this)">
+                <div class="fit-card-name">Baggy Fit</div>
+                <div class="fit-card-gsm">240 GSM Heavy</div>
+                <div class="fit-card-price">Rs. 3,200</div>
+              </div>
+              <div class="fit-option-card" onclick="setCustomFit('regular', this)">
+                <div class="fit-card-name">Regular Fit</div>
+                <div class="fit-card-gsm">200 GSM Combed</div>
+                <div class="fit-card-price">Rs. 2,600</div>
+              </div>
+              <div class="fit-option-card" onclick="setCustomFit('kids', this)">
+                <div class="fit-card-name">Kids Fit</div>
+                <div class="fit-card-gsm">180 GSM Soft</div>
+                <div class="fit-card-price">Rs. 2,100</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: T-SHIRT COLOR -->
+          <div class="studio-step-block">
+            <div class="step-header">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Select Fabric Color</h3>
+            </div>
+            
+            <div class="custom-color-swatches-grid">
+              <div class="custom-color-swatch active" style="background:#0a0d14;" title="Jet Black" onclick="setCustomColor('Jet Black', '#0a0d14', this)"></div>
+              <div class="custom-color-swatch" style="background:#f8fafc;" title="Pure White" onclick="setCustomColor('Pure White', '#f8fafc', this)"></div>
+              <div class="custom-color-swatch" style="background:#00e5ff;" title="Ice Blue" onclick="setCustomColor('Ice Blue', '#00e5ff', this)"></div>
+              <div class="custom-color-swatch" style="background:#182335;" title="Midnight Slate" onclick="setCustomColor('Midnight Slate', '#182335', this)"></div>
+              <div class="custom-color-swatch" style="background:#2d333f;" title="Charcoal Grey" onclick="setCustomColor('Charcoal Grey', '#2d333f', this)"></div>
+            </div>
+          </div>
+
+          <!-- STEP 3: PRINT PLACEMENT -->
+          <div class="studio-step-block">
+            <div class="step-header">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Print Position</h3>
+            </div>
+            
+            <div class="placements-grid">
+              <button class="placement-btn active" onclick="setCustomPlacement('center', this)">Center Chest</button>
+              <button class="placement-btn" onclick="setCustomPlacement('pocket', this)">Left Pocket</button>
+              <button class="placement-btn" onclick="setCustomPlacement('back', this)">Oversized Back</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: UPLOAD ARTWORK OR ENTER TEXT -->
+          <div class="studio-step-block">
+            <div class="step-header">
+              <div class="step-number">4</div>
+              <h3 class="step-title">Add Your Design or Text</h3>
+            </div>
+
+            <!-- Artwork File Upload -->
+            <div class="artwork-uploader-box">
+              <input type="file" id="customArtworkUpload" class="file-input-hidden" accept="image/*">
+              <i class="fa fa-cloud-arrow-up" style="font-size:2rem;color:var(--ice-blue);margin-bottom:8px;display:block;"></i>
+              <strong style="font-size:0.92rem;color:var(--text-primary);display:block;">Click to Upload Artwork / Logo</strong>
+              <span style="font-size:0.75rem;color:var(--text-muted);">Supports PNG, JPG, SVG, WebP (Transparent PNG recommended)</span>
+              <img id="uploadedThumbPreview" class="uploaded-thumb-preview" alt="Artwork Preview">
+            </div>
+
+            <div style="text-align:center;margin:16px 0;font-size:0.8rem;color:var(--text-muted);font-weight:700;">
+              — OR ENTER CUSTOM TEXT —
+            </div>
+
+            <!-- Custom Text Input -->
+            <div class="admin-form-group">
+              <input type="text" id="customTextInput" class="admin-input" placeholder="Type text (e.g. TOOTHLESS & LIGHT / DRAGON 99)">
+              <div class="text-colors-row">
+                <span style="font-size:0.78rem;color:var(--text-muted);">Text Color:</span>
+                <div class="text-color-dot active" style="background:#00e5ff;" onclick="setCustomTextColor('#00e5ff', this)" title="Ice Blue"></div>
+                <div class="text-color-dot" style="background:#ffffff;" onclick="setCustomTextColor('#ffffff', this)" title="White"></div>
+                <div class="text-color-dot" style="background:#000000;" onclick="setCustomTextColor('#000000', this)" title="Black"></div>
+                <div class="text-color-dot" style="background:#f59e0b;" onclick="setCustomTextColor('#f59e0b', this)" title="Gold Flame"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5: SIZE SELECTION -->
+          <div class="studio-step-block">
+            <div class="step-header">
+              <div class="step-number">5</div>
+              <h3 class="step-title">Select Size: <span id="selectedCustomSizeLabel" style="color:var(--ice-blue);">L</span></h3>
+            </div>
+            
+            <div id="customSizesContainer" class="size-pill-group">
+              <!-- Dynamically populated -->
+              <button class="size-pill" onclick="setCustomSize('S', this)">S</button>
+              <button class="size-pill" onclick="setCustomSize('M', this)">M</button>
+              <button class="size-pill active" onclick="setCustomSize('L', this)">L</button>
+              <button class="size-pill" onclick="setCustomSize('XL', this)">XL</button>
+              <button class="size-pill" onclick="setCustomSize('2XL', this)">2XL</button>
+            </div>
+          </div>
+
+          <!-- Price Summary & CTAs -->
+          <div class="custom-price-summary-box">
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;">Custom Tee Price</div>
+              <div id="customStudioPrice" style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;color:var(--ice-blue);">Rs. 3,200</div>
+              <div id="customStudioGsm" style="font-size:0.78rem;color:var(--text-secondary);margin-top:2px;">Baggy Fit • 240 GSM Heavyweight Cotton</div>
+            </div>
+            <div style="text-align:right;">
+              <span style="display:inline-block;padding:4px 10px;border-radius:var(--radius-full);background:rgba(37,211,102,0.15);color:#25d366;font-size:0.78rem;font-weight:700;">
+                ⚡ 24h Express Print
+              </span>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="studio-cta-stack">
+            <button class="btn-checkout-whatsapp" onclick="orderCustomViaWhatsApp()">
+              <i class="fab fa-whatsapp"></i> Order Custom Tee on WhatsApp
+            </button>
+            <button class="btn-secondary" style="width:100%;" onclick="addCustomToCart()">
+              <i class="fa fa-bag-shopping"></i> Add Custom Tee to Bag
+            </button>
+          </div>
+
+          <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);margin-top:14px;">
+            🔒 100% Quality Guaranteed • Print proof approved on WhatsApp before production
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo-link">
+            <div class="logo-img-wrap">
+              <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+            </div>
+            <div class="brand-text-block">
+              <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+              <div class="brand-subtitle">Streetwear Collective</div>
+            </div>
+          </div>
+          <p>Unisex premium streetwear tees engineered with 240 GSM combed cotton and vibrant crack-proof Japanese inks.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/94771234567" target="_blank" class="social-link-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="shop.html?cat=baggy">Baggy Oversized Tees</a></li>
+            <li><a href="shop.html?cat=regular">Regular Unisex Tees</a></li>
+            <li><a href="shop.html?cat=kids">Kids Unisex Collection</a></li>
+            <li><a href="custom.html">Custom Design Studio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Fury &amp; Light</a></li>
+            <li><a href="about.html#sizeGuide">Sizing Chart Guide</a></li>
+            <li><a href="terms.html">Returns &amp; Exchanges</a></li>
+            <li><a href="terms.html#delivery">Island-Wide Delivery</a></li>
+            <li><a href="terms.html#care">Print Washing &amp; Care</a></li>
+            <li><a href="contact.html">Help &amp; Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <div class="footer-contact-info">
+            <div class="contact-row-item">
+              <i class="fa fa-phone"></i>
+              <span id="footerPhoneDisplay">+94 77 123 4567</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-envelope"></i>
+              <span id="footerEmailDisplay">furyandlight.lk@gmail.com</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-location-dot"></i>
+              <span>Colombo / Island-wide Express Delivery</span>
+            </div>
+            <div style="margin-top:10px;">
+              <a href="https://wa.me/94771234567" target="_blank" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;background:#25d366;color:#000;">
+                <i class="fab fa-whatsapp"></i> WhatsApp Order Line
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>FURY &amp; LIGHT</strong>. All Rights Reserved.</div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <a href="terms.html">Terms &amp; Privacy</a>
+          <span>•</span>
+          <button class="admin-trigger-link" onclick="openAdminModal()">
+            <i class="fa fa-gear"></i> Manage Store (Admin Mode)
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/94771234567" class="floating-whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Cart Drawer -->
+  <div id="cartOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3><i class="fa fa-bag-shopping" style="color:var(--ice-blue);"></i> Your Bag</h3>
+      <button class="cart-close-btn" onclick="closeCartDrawer()">&times;</button>
+    </div>
+    <div id="cartItemsContainer" class="cart-items-body"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="subtotal-label">Subtotal Estimate:</span>
+        <span id="cartSubtotal" class="subtotal-value">Rs. 0</span>
+      </div>
+      <button class="btn-checkout-whatsapp" onclick="checkoutViaWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Complete Order via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom-studio.js"></script>
+  <script src="assets/js/admin.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const config = getStoreConfig();
+      const p = document.getElementById("footerPhoneDisplay");
+      const e = document.getElementById("footerEmailDisplay");
+      if (p) p.textContent = config.phone;
+      if (e) e.textContent = config.email;
+    });
+  </script>
+</body>
+</html>

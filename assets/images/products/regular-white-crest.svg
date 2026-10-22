@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#cbd5e1" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#94a3b8" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="24" fill="#090d14"/>
+  <circle cx="250" cy="275" r="215" fill="url(#glow)"/>
+  
+  <!-- Regular T-Shirt Body (White) -->
+  <g class="tshirt-wrap">
+    <path d="M 170 85 Q 250 115 330 85 L 440 150 L 405 220 L 360 195 L 360 465 Q 250 475 140 465 L 140 195 L 95 220 L 60 150 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M 170 85 Q 250 115 330 85 L 440 150 L 405 220 L 360 195 L 360 465 Q 250 475 140 465 L 140 195 L 95 220 L 60 150 Z" fill="url(#shade)"/>
+    <path d="M 170 85 Q 250 120 330 85 Q 250 98 170 85 Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.8"/>
+  </g>
+
+  <!-- Graphic Print (Minimal Chest Crest) -->
+  <g transform="translate(165, 150) scale(0.35)">
+    <circle cx="120" cy="120" r="80" fill="none" stroke="#0f172a" stroke-width="6"/>
+    <path d="M 80 120 Q 120 70 160 120" fill="none" stroke="#0284c7" stroke-width="6"/>
+    <circle cx="100" cy="110" r="6" fill="#0f172a"/>
+    <circle cx="140" cy="110" r="6" fill="#0284c7"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="250" y="275" font-family="'Impact', 'Arial Black', sans-serif" font-size="20" font-weight="900" fill="#0f172a" letter-spacing="4" text-anchor="middle">CREST MINIMAL</text>
+  <text x="250" y="298" font-family="'Courier New', monospace" font-size="10" font-weight="700" fill="#0284c7" letter-spacing="2.5" text-anchor="middle">BIO-WASHED COTTON</text>
+  <rect x="200" y="310" width="100" height="2" fill="#00e5ff" opacity="0.9"/>
+
+  <!-- Badge Tag -->
+  <rect x="25" y="25" width="135" height="28" rx="14" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="1.2"/>
+  <text x="92" y="43" font-family="sans-serif" font-size="11" font-weight="700" fill="#00e5ff" text-anchor="middle">✨ REGULAR FIT</text>
+</svg>

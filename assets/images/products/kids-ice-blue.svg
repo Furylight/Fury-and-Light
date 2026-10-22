@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="24" fill="#090d14"/>
+  <circle cx="250" cy="275" r="215" fill="url(#glow)"/>
+  
+  <!-- Kids T-Shirt Body (Ice Blue) -->
+  <g class="tshirt-wrap">
+    <path d="M 175 95 Q 250 125 325 95 L 420 155 L 385 215 L 350 195 L 350 440 Q 250 450 150 440 L 150 195 L 115 215 L 80 155 Z" fill="#00e5ff" stroke="#0284c7" stroke-width="2"/>
+    <path d="M 175 95 Q 250 125 325 95 L 420 155 L 385 215 L 350 195 L 350 440 Q 250 450 150 440 L 150 195 L 115 215 L 80 155 Z" fill="url(#shade)"/>
+    <path d="M 175 95 Q 250 128 325 95 Q 250 108 175 95 Z" fill="#00c8e0" stroke="#0284c7" stroke-width="1.8"/>
+  </g>
+
+  <!-- Graphic Print -->
+  <g transform="translate(165, 155) scale(0.35)">
+    <circle cx="120" cy="110" r="45" fill="#090d14"/>
+    <circle cx="108" cy="105" r="6" fill="#00e5ff"/>
+    <circle cx="132" cy="105" r="6" fill="#00e5ff"/>
+    <path d="M 108 120 Q 120 130 132 120" fill="none" stroke="#00e5ff" stroke-width="3"/>
+    <!-- Wing hints -->
+    <path d="M 70 100 Q 40 70 60 50 Q 80 80 85 95" fill="#090d14"/>
+    <path d="M 170 100 Q 200 70 180 50 Q 160 80 155 95" fill="#090d14"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="250" y="270" font-family="'Impact', 'Arial Black', sans-serif" font-size="20" font-weight="900" fill="#090d14" letter-spacing="4" text-anchor="middle">HERO ADVENTURE</text>
+  <text x="250" y="292" font-family="'Courier New', monospace" font-size="10" font-weight="700" fill="#07223b" letter-spacing="2" text-anchor="middle">DURABLE PRINT // KIDS</text>
+  <rect x="200" y="304" width="100" height="2" fill="#090d14" opacity="0.8"/>
+
+  <!-- Badge Tag -->
+  <rect x="25" y="25" width="135" height="28" rx="14" fill="rgba(0, 229, 255, 0.25)" stroke="#00e5ff" stroke-width="1.2"/>
+  <text x="92" y="43" font-family="sans-serif" font-size="11" font-weight="700" fill="#00e5ff" text-anchor="middle">⭐ KIDS UNISEX</text>
+</svg>

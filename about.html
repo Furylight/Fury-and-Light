@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us &amp; Sizing Guide | Fury & Light</title>
+  <meta name="description" content="Discover the story behind Fury & Light, our dual dragon ethos, 240 GSM heavyweight combed cotton specs, crack-proof printing process, and complete unisex sizing charts.">
+  
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    .story-hero {
+      padding: 60px 0 40px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 10%, #101c30 0%, var(--bg-main) 70%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+      padding: 70px 0;
+    }
+    .story-img-container {
+      background: #090e18;
+      border: 1px solid var(--border-ice);
+      border-radius: 32px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px var(--ice-glow-soft);
+    }
+    .story-img-container img {
+      max-width: 380px;
+      margin: 0 auto;
+      border-radius: 20px;
+      filter: drop-shadow(0 0 20px rgba(0,229,255,0.3));
+    }
+    .sizing-section {
+      padding: 70px 0 90px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .size-table-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 32px;
+      overflow-x: auto;
+    }
+    .size-table-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+      color: var(--ice-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      font-size: 0.92rem;
+    }
+    .size-table th, .size-table td {
+      padding: 14px 18px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .size-table th {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+    }
+    .size-table tr:hover td {
+      background: rgba(0, 229, 255, 0.04);
+      color: var(--ice-blue);
+    }
+    @media (max-width: 900px) {
+      .about-story-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span>⚡ FREE ISLAND-WIDE DELIVERY ON ORDERS OVER RS. 6,000 | 🐉 CUSTOM PRINTS OPEN</span>
+  </div>
+
+  <!-- Header Nav -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-link">
+        <div class="logo-img-wrap">
+          <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+        </div>
+        <div class="brand-text-block">
+          <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+          <div class="brand-subtitle">Streetwear Collective</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop All</a></li>
+          <li><a href="shop.html?cat=baggy" class="nav-link">Baggy Tees <span class="nav-badge-pill">HOT</span></a></li>
+          <li><a href="shop.html?cat=kids" class="nav-link">Kids Unisex</a></li>
+          <li><a href="custom.html" class="nav-link" style="color:var(--ice-blue);"><i class="fa fa-wand-magic-sparkles"></i> Custom Studio</a></li>
+          <li><a href="about.html" class="nav-link active">Quality &amp; Story</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="custom.html" class="cta-btn-nav">
+          <i class="fa fa-palette"></i>
+          <span>Custom Tee</span>
+        </a>
+        <button class="icon-btn" onclick="openCartDrawer()" title="View Bag">
+          <i class="fa fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="story-hero">
+    <div class="container">
+      <span class="section-tag">Our Ethos</span>
+      <h1 class="section-title">THE DUAL DRAGON ETHOS</h1>
+      <p class="section-subtitle">
+        Born from the clash of darkness and brilliance. Heavyweight fabrics, artisanal printing, and unapologetic streetwear individuality.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story & Vision -->
+  <main class="container">
+    <section class="about-story-grid">
+      <div class="story-img-container">
+        <img src="assets/images/logo.jpg" alt="Fury and Light Dragons">
+      </div>
+
+      <div class="story-content">
+        <span class="section-tag">The Story</span>
+        <h2 class="section-title" style="text-align:left;font-size:2.3rem;">TWO DRAGONS, ONE PASSION</h2>
+        <p style="color:var(--text-secondary);margin-bottom:18px;line-height:1.7;">
+          <strong>FURY &amp; LIGHT</strong> was founded on a simple realization: everyday streetwear in the local market was flooded with flimsy, cheap fabrics and low-quality prints that faded or peeled away after two washes.
+        </p>
+        <p style="color:var(--text-secondary);margin-bottom:18px;line-height:1.7;">
+          Our logo represents the unbreakable bond of the <strong>Night Fury</strong> (darkness, stealth, fierce power) and the <strong>Light Fury</strong> (clarity, grace, radiant beauty), locked in harmony with piercing <strong>Ice Blue eyes</strong>. This symbolizes our dual commitment: bold, rebellious streetwear aesthetics paired with uncompromising fabric quality.
+        </p>
+        <p style="color:var(--text-secondary);margin-bottom:28px;line-height:1.7;">
+          We buy the finest combed cotton, tailor unisex cuts that look effortless on any body type, and print using state-of-the-art Japanese DTF and high-density screen printing. And because we believe style should be accessible to all, we offer custom design printing without charging exorbitant premiums.
+        </p>
+
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="shop.html" class="btn-primary">Browse The Collection</a>
+          <a href="custom.html" class="btn-secondary">Design Your Own Tee</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sizing Guide Tables -->
+    <section id="sizeGuide" class="sizing-section">
+      <div class="section-header">
+        <span class="section-tag">Precision Fit</span>
+        <h2 class="section-title">OFFICIAL SIZING CHARTS</h2>
+        <p class="section-subtitle">
+          Find your exact fit. All our garments are unisex and preshrunk for true-to-size reliability.
+        </p>
+      </div>
+
+      <!-- Baggy Oversized Fit Table -->
+      <div class="size-table-card">
+        <h3><i class="fa fa-fire"></i> Baggy / Oversized T-Shirt Sizing (240 GSM Heavyweight)</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary);">Drop-shoulder relaxed cut with extra room through chest and sleeves. Order your regular size for an authentic baggy drape.</p>
+        
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest Circumference (Inches)</th>
+              <th>Length (Inches)</th>
+              <th>Shoulder Drop (Inches)</th>
+              <th>Recommended Height</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>S</strong></td>
+              <td>42"</td>
+              <td>28"</td>
+              <td>21"</td>
+              <td>5'2" – 5'6"</td>
+            </tr>
+            <tr>
+              <td><strong>M</strong></td>
+              <td>44"</td>
+              <td>29"</td>
+              <td>22"</td>
+              <td>5'6" – 5'9"</td>
+            </tr>
+            <tr>
+              <td><strong>L</strong></td>
+              <td>46"</td>
+              <td>30"</td>
+              <td>23"</td>
+              <td>5'9" – 6'0"</td>
+            </tr>
+            <tr>
+              <td><strong>XL</strong></td>
+              <td>48"</td>
+              <td>31"</td>
+              <td>24"</td>
+              <td>6'0" – 6'2"</td>
+            </tr>
+            <tr>
+              <td><strong>2XL</strong></td>
+              <td>50"</td>
+              <td>32"</td>
+              <td>25"</td>
+              <td>6'2"+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Regular Unisex Fit Table -->
+      <div class="size-table-card">
+        <h3><i class="fa fa-shirt"></i> Regular Unisex Fit Sizing (200 GSM Ring-Spun Cotton)</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary);">Classic modern fit. Standard crew neck suitable for men and women.</p>
+        
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest Circumference (Inches)</th>
+              <th>Length (Inches)</th>
+              <th>Sleeve Length</th>
+              <th>Fit Profile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>XS</strong></td>
+              <td>36"</td>
+              <td>26"</td>
+              <td>7.5"</td>
+              <td>Slim / Petite</td>
+            </tr>
+            <tr>
+              <td><strong>S</strong></td>
+              <td>38"</td>
+              <td>27"</td>
+              <td>8.0"</td>
+              <td>Regular Comfort</td>
+            </tr>
+            <tr>
+              <td><strong>M</strong></td>
+              <td>40"</td>
+              <td>28"</td>
+              <td>8.5"</td>
+              <td>Standard Medium</td>
+            </tr>
+            <tr>
+              <td><strong>L</strong></td>
+              <td>42"</td>
+              <td>29"</td>
+              <td>9.0"</td>
+              <td>Relaxed Daily</td>
+            </tr>
+            <tr>
+              <td><strong>XL</strong></td>
+              <td>44"</td>
+              <td>30"</td>
+              <td>9.5"</td>
+              <td>Roomy Comfort</td>
+            </tr>
+            <tr>
+              <td><strong>2XL</strong></td>
+              <td>46"</td>
+              <td>31"</td>
+              <td>10.0"</td>
+              <td>Plus Comfort</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Kids Unisex Fit Table -->
+      <div class="size-table-card">
+        <h3><i class="fa fa-child"></i> Kids Unisex Sizing (180 GSM Gentle Combed Cotton)</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary);">Soft, breathable and stretchy. Hypoallergenic fabric for active play.</p>
+        
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Age Group</th>
+              <th>Chest (Inches)</th>
+              <th>Length (Inches)</th>
+              <th>Child Height (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>3 - 4 Yrs</strong></td>
+              <td>26"</td>
+              <td>17"</td>
+              <td>98 – 104 cm</td>
+            </tr>
+            <tr>
+              <td><strong>5 - 6 Yrs</strong></td>
+              <td>28"</td>
+              <td>18"</td>
+              <td>110 – 116 cm</td>
+            </tr>
+            <tr>
+              <td><strong>7 - 8 Yrs</strong></td>
+              <td>30"</td>
+              <td>20"</td>
+              <td>122 – 128 cm</td>
+            </tr>
+            <tr>
+              <td><strong>9 - 10 Yrs</strong></td>
+              <td>32"</td>
+              <td>22"</td>
+              <td>134 – 140 cm</td>
+            </tr>
+            <tr>
+              <td><strong>11 - 12 Yrs</strong></td>
+              <td>34"</td>
+              <td>24"</td>
+              <td>146 – 152 cm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo-link">
+            <div class="logo-img-wrap">
+              <img src="assets/images/logo.jpg" alt="Fury and Light Logo">
+            </div>
+            <div class="brand-text-block">
+              <div class="brand-title">FURY <span class="brand-amp">&amp;</span> LIGHT</div>
+              <div class="brand-subtitle">Streetwear Collective</div>
+            </div>
+          </div>
+          <p>Unisex premium streetwear tees engineered with 240 GSM combed cotton and vibrant crack-proof Japanese inks.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/94771234567" target="_blank" class="social-link-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/furyandlight" target="_blank" class="social-link-btn"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="shop.html?cat=baggy">Baggy Oversized Tees</a></li>
+            <li><a href="shop.html?cat=regular">Regular Unisex Tees</a></li>
+            <li><a href="shop.html?cat=kids">Kids Unisex Collection</a></li>
+            <li><a href="custom.html">Custom Design Studio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Fury &amp; Light</a></li>
+            <li><a href="about.html#sizeGuide">Sizing Chart Guide</a></li>
+            <li><a href="terms.html">Returns &amp; Exchanges</a></li>
+            <li><a href="terms.html#delivery">Island-Wide Delivery</a></li>
+            <li><a href="terms.html#care">Print Washing &amp; Care</a></li>
+            <li><a href="contact.html">Help &amp; Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <div class="footer-contact-info">
+            <div class="contact-row-item">
+              <i class="fa fa-phone"></i>
+              <span id="footerPhoneDisplay">+94 77 123 4567</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-envelope"></i>
+              <span id="footerEmailDisplay">furyandlight.lk@gmail.com</span>
+            </div>
+            <div class="contact-row-item">
+              <i class="fa fa-location-dot"></i>
+              <span>Colombo / Island-wide Express Delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>FURY &amp; LIGHT</strong>. All Rights Reserved.</div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <a href="terms.html">Terms &amp; Privacy</a>
+          <span>•</span>
+          <button class="admin-trigger-link" onclick="openAdminModal()">
+            <i class="fa fa-gear"></i> Manage Store (Admin Mode)
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/94771234567" class="floating-whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Cart Drawer -->
+  <div id="cartOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3><i class="fa fa-bag-shopping" style="color:var(--ice-blue);"></i> Your Bag</h3>
+      <button class="cart-close-btn" onclick="closeCartDrawer()">&times;</button>
+    </div>
+    <div id="cartItemsContainer" class="cart-items-body"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="subtotal-label">Subtotal Estimate:</span>
+        <span id="cartSubtotal" class="subtotal-value">Rs. 0</span>
+      </div>
+      <button class="btn-checkout-whatsapp" onclick="checkoutViaWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Complete Order via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const config = getStoreConfig();
+      const p = document.getElementById("footerPhoneDisplay");
+      const e = document.getElementById("footerEmailDisplay");
+      if (p) p.textContent = config.phone;
+      if (e) e.textContent = config.email;
+    });
+  </script>
+</body>
+</html>
